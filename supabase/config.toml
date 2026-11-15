@@ -1,0 +1,5 @@
+# Só o necessário para publicar a função. Para desenvolvimento local completo rode `supabase init` e mantenha este bloco.
+# A inscrição é pública (participante não faz login): o JWT não é exigido.
+# A proteção vem de: lista de origens (CORS), honeypot, validação no backend e limite de requisições por IP.
+[functions.registrar-inscricao]
+verify_jwt = false

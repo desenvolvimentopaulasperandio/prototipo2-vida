@@ -1,0 +1,20 @@
+# Segredos e ambiente (nunca versionar)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+supabase/.env
+supabase/.temp/
+supabase/.branches/
+
+# Dependências e lixo local
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Ferramentas locais
+.claude/
+.vscode/
+.idea/
