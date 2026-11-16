@@ -82,7 +82,7 @@ for (const [nomeDev, w, h, mobile] of DEVICES) {
   });
   await check(tag + 'chip, subtítulo e microcopy usam o config', async () => {
     const t = await p.ev(`({chip:document.querySelector('.im-chip').textContent,sub:document.querySelector('.im-sub').textContent,micro:document.querySelector('.im-micro').textContent,ph:[...document.querySelectorAll('.im-input')].map(i=>i.placeholder),fs:[...document.querySelectorAll('.im-input')].map(i=>parseFloat(getComputedStyle(i).fontSize)),hs:[...document.querySelectorAll('.im-input')].map(i=>i.getBoundingClientRect().height)})`);
-    assert.equal(t.chip, 'Super Aulão ao vivo · 11 de dezembro às 14h');
+    assert.equal(t.chip, 'Super Aulão ao vivo · 12 de dezembro às 14h');
     assert.equal(t.sub, 'Preencha os dados abaixo para garantir sua vaga no super aulão.');
     assert.match(t.micro, /^Seus dados ficam só com Marca Teste\./);
     assert.deepEqual(t.ph, ['Seu nome completo', '(11) 99999-9999', 'voce@email.com']);
@@ -132,12 +132,12 @@ for (const [nomeDev, w, h, mobile] of DEVICES) {
     const h = srv.hooks[0];
     assert.deepEqual(Object.keys(h), ['nome', 'whatsapp', 'email', 'evento', 'dataEvento', 'origem', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'timestamp']);
     assert.equal(h.nome, 'Maria da Silva'); assert.equal(h.whatsapp, '5527999999999'); assert.equal(h.email, 'maria@exemplo.com');
-    assert.equal(h.evento, 'super-aulao'); assert.equal(h.dataEvento, '2026-12-11'); assert.match(h.origem, /utm_source=ig/);
+    assert.equal(h.evento, 'super-aulao'); assert.equal(h.dataEvento, '2026-12-12'); assert.match(h.origem, /utm_source=ig/);
     assert.deepEqual([h.utm_source, h.utm_medium, h.utm_campaign, h.utm_content, h.utm_term], ['ig', 'bio', 'aulao', '', '']);
     assert.match(h.timestamp, /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/);
     assert.equal(srv.leads[0].status_webhook, 'sent');
     const ok = await p.ev(`({on:document.querySelector('.im-ok').classList.contains('on'),title:document.getElementById('im-ok-title').textContent,text:document.querySelector('.im-ok .im-sub').textContent,btns:[...document.querySelectorAll('.im-btns > *')].map(b=>b.textContent+'|'+(b.getAttribute('href')||'')),focus:document.activeElement.id,form:document.getElementById('im-nome').value})`);
-    assert.equal(ok.on, true); assert.equal(ok.title, 'Inscrição recebida!'); assert.match(ok.text, /Finalize o pagamento.*11 de dezembro às 14h/);
+    assert.equal(ok.on, true); assert.equal(ok.title, 'Inscrição recebida!'); assert.match(ok.text, /Finalize o pagamento.*12 de dezembro às 14h/);
     assert.match(ok.btns[0], /^Ir para o pagamento\|https:\/\/pay\.kiwify\.com\.br\/rIiYAl1\?.*utm_source=ig/); assert.equal(ok.btns[1], 'Fechar|');
     assert.equal(ok.focus, 'im-ok-title'); assert.equal(ok.form, '');
     await p.shot(`${nomeDev.replace(' ', '_')}_3_sucesso`);
@@ -170,10 +170,10 @@ const okText = (p) => p.ev(`({t:document.getElementById('im-ok-title').textConte
 const formErr = (p) => p.ev(`document.querySelector('.im-formerr.on')?.textContent||null`);
 
 await cenario('gratuito + webhook 200: "Sua vaga está garantida" + data', { gratuito: true }, async (p) => {
-  const o = await okText(p); assert.equal(o.t, 'Inscrição confirmada!'); assert.equal(o.x, 'Sua vaga está garantida. Salve a data: 11 de dezembro às 14h.'); assert.deepEqual(o.btns, ['Fechar']);
+  const o = await okText(p); assert.equal(o.t, 'Inscrição confirmada!'); assert.equal(o.x, 'Sua vaga está garantida. Salve a data: 12 de dezembro às 14h.'); assert.deepEqual(o.btns, ['Fechar']);
 });
 await cenario('gratuito + envioAutomaticoLink: texto do link por WhatsApp/e-mail', { gratuito: true, envio: true }, async (p) => {
-  assert.equal((await okText(p)).x, 'Enviamos o link de acesso para o seu WhatsApp e e-mail. Salve a data: 11 de dezembro às 14h.');
+  assert.equal((await okText(p)).x, 'Enviamos o link de acesso para o seu WhatsApp e e-mail. Salve a data: 12 de dezembro às 14h.');
   assert.equal(await p.ev(`document.querySelector('.im-sub').textContent`), 'O link de acesso chega no seu WhatsApp e no seu e-mail antes de a gente começar.');
 });
 await cenario('gratuito + grupo do WhatsApp: botão aparece com rel seguro', { gratuito: true, grupo: 'https://chat.whatsapp.com/abc' }, async (p) => {
@@ -181,11 +181,11 @@ await cenario('gratuito + grupo do WhatsApp: botão aparece com rel seguro', { g
   assert.equal(await p.ev(`document.querySelector('.im-btns a').rel`), 'noopener noreferrer');
 });
 await cenario('webhook 500: inscrição recebida, SEM afirmar envio (lead preservado como failed)', { gratuito: true, webhook: '500' }, async (p) => {
-  const o = await okText(p); assert.equal(o.x, 'Recebemos sua inscrição! Salve a data: 11 de dezembro às 14h.');
+  const o = await okText(p); assert.equal(o.x, 'Recebemos sua inscrição! Salve a data: 12 de dezembro às 14h.');
   assert.equal(srv.leads.length, 1); assert.equal(srv.leads[0].status_webhook, 'failed'); assert.equal(srv.leads[0].erro_webhook, 'HTTP 500');
 });
 await cenario('webhook com conexão derrubada: mesmo comportamento', { gratuito: true, webhook: 'drop' }, async (p) => {
-  assert.equal((await okText(p)).x, 'Recebemos sua inscrição! Salve a data: 11 de dezembro às 14h.'); assert.equal(srv.leads[0].status_webhook, 'failed');
+  assert.equal((await okText(p)).x, 'Recebemos sua inscrição! Salve a data: 12 de dezembro às 14h.'); assert.equal(srv.leads[0].status_webhook, 'failed');
 });
 await cenario('falha no banco: erro, dados mantidos, botão reabilitado, webhook não chamado', { dbfail: true }, async (p) => {
   assert.equal(await formErr(p), 'Não foi possível concluir sua inscrição agora. Tente novamente.');
@@ -196,7 +196,7 @@ await cenario('falha no banco: erro, dados mantidos, botão reabilitado, webhook
 await cenario('mock rate_limited: mensagem de muitas tentativas', { mock: true }, async (p) => { assert.equal(await formErr(p), 'Muitas tentativas. Aguarde um instante e tente novamente.'); }, { query: '?mock=rate' });
 await cenario('mock network_error: mensagem genérica', { mock: true }, async (p) => { assert.equal(await formErr(p), 'Não foi possível concluir sua inscrição agora. Tente novamente.'); }, { query: '?mock=network' });
 await cenario('mock validation_error: mostra erro no campo', { mock: true }, async (p) => { assert.equal(await p.ev(`document.getElementById('im-email-err').textContent`), 'Digite um e-mail válido'); }, { query: '?mock=validation' });
-await cenario('mock pending/sent sem rede', { mock: true, gratuito: true }, async (p) => { assert.equal((await okText(p)).x, 'Recebemos sua inscrição! Salve a data: 11 de dezembro às 14h.'); }, { query: '?mock=pending' });
+await cenario('mock pending/sent sem rede', { mock: true, gratuito: true }, async (p) => { assert.equal((await okText(p)).x, 'Recebemos sua inscrição! Salve a data: 12 de dezembro às 14h.'); }, { query: '?mock=pending' });
 
 // ---- Teclado aberto no celular (altura de tela reduzida) ----
 await set({ reset: true, webhook: '200', gratuito: false, mock: false });

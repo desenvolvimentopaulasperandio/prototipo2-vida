@@ -6,7 +6,7 @@ import { handle } from '../supabase/functions/registrar-inscricao/handler.ts';
 
 const ORIGEM = 'http://localhost:8080';
 const BODY = {
-  nome: 'Maria  da Silva', whatsapp: '(27) 99999-9999', email: ' Maria@Exemplo.com ', evento: 'super-aulao', dataEvento: '2026-12-11',
+  nome: 'Maria  da Silva', whatsapp: '(27) 99999-9999', email: ' Maria@Exemplo.com ', evento: 'super-aulao', dataEvento: '2026-12-12',
   origem: 'http://localhost:8080/?utm_source=ig', utm_source: 'ig', utm_medium: 'bio', utm_campaign: 'aulao', utm_content: 'c', utm_term: 't', honeypot: '',
 };
 
@@ -51,13 +51,13 @@ test('webhook 200: payload idêntico à especificação, lead "sent"', async () 
   assert.equal(w.recebidos[0].method, 'POST'); assert.equal(w.recebidos[0].ct, 'application/json');
   const enviado = JSON.parse(w.recebidos[0].raw);
   assert.deepEqual(enviado, {
-    nome: 'Maria da Silva', whatsapp: '5527999999999', email: 'maria@exemplo.com', evento: 'super-aulao', dataEvento: '2026-12-11',
+    nome: 'Maria da Silva', whatsapp: '5527999999999', email: 'maria@exemplo.com', evento: 'super-aulao', dataEvento: '2026-12-12',
     origem: 'http://localhost:8080/?utm_source=ig', utm_source: 'ig', utm_medium: 'bio', utm_campaign: 'aulao', utm_content: 'c', utm_term: 't',
     timestamp: '2026-11-14T23:52:00.000Z',
   });
   assert.deepEqual(Object.keys(enviado), ['nome', 'whatsapp', 'email', 'evento', 'dataEvento', 'origem', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'timestamp']);
   assert.equal(db.rows[0].status_webhook, 'sent'); assert.equal(db.rows[0].tentativas_envio, 1); assert.equal(db.rows[0].erro_webhook, null);
-  assert.equal(db.rows[0].data_evento, '2026-12-11');
+  assert.equal(db.rows[0].data_evento, '2026-12-12');
   await w.close();
 });
 

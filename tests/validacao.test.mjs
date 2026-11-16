@@ -49,7 +49,7 @@ test('frontend: validarInscricao devolve mensagens e valores normalizados', () =
 });
 
 test('backend: validarCorpo valida evento, data e origem', () => {
-  const base = { nome: 'Maria Silva', whatsapp: '27999999999', email: 'm@x.com', evento: 'super-aulao', dataEvento: '2026-12-11', origem: 'https://site.com/?utm_source=a' };
+  const base = { nome: 'Maria Silva', whatsapp: '27999999999', email: 'm@x.com', evento: 'super-aulao', dataEvento: '2026-12-12', origem: 'https://site.com/?utm_source=a' };
   assert.equal(back.validarCorpo(base).ok, true);
   for (const [k, v] of [['dataEvento', '2026-02-30'], ['dataEvento', ''], ['evento', 'Super Aulão'], ['origem', 'javascript:alert(1)'], ['origem', '']]) {
     const r = back.validarCorpo({ ...base, [k]: v }); assert.equal(r.ok, false, k + v); assert.ok(r.fields[k], k);
