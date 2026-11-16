@@ -584,7 +584,8 @@ details p{padding:0 0 30px;color:var(--muted);max-width:680px}
   /* Prova social (flag: lista vazia = nada é renderizado) */
   var PS=(C.provaSocial||[]).filter(Boolean), pe=$('#prova');
   if(pe){ if(!PS.length) pe.remove(); else { PS.forEach(function(i){ var d=document.createElement('blockquote'); d.className='prova-i'; d.textContent=(typeof i==='string')?i:(i.texto||''); if(i&&i.fonte){ var f=document.createElement('small'); f.textContent=i.fonte; d.appendChild(f); } pe.appendChild(d); }); pe.hidden=false; } }
-  if(P.photo){ var hi=$('#hero-img'); if(hi) hi.src=P.photo; var ph=$('#photo'); ph.innerHTML='<img src="'+P.photo+'" alt="Paula Sperandio" loading="lazy" width="640" height="800">'; }
+  if(P.photo){ var hi=$('#hero-img'); if(hi) hi.src=P.photo; }
+  if(P.photoBio||P.photo){ var ph=$('#photo'); ph.innerHTML='<img src="'+(P.photoBio||P.photo)+'" alt="Paula Sperandio" loading="lazy" width="640" height="800">'; }
   if(C.privacyUrl){ var pv=$('#v-privacy'); pv.href=C.privacyUrl; pv.hidden=false; }
   $('#yr').textContent=new Date().getFullYear();
 

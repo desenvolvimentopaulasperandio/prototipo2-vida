@@ -19,7 +19,8 @@ window.LP_CONFIG = {
   paula: {
     role: "Estrategista de Posicionamento · Diretora Criativa · Treinadora",                 // cargo / posicionamento oficial
     bio: "Paula une estratégia, branding e comunicação para ajudar especialistas e marcas a serem percebidos pelo valor que realmente entregam.",                  // bio oficial (texto curto)
-    photo: "Perfil.webp"      // foto da Paula
+    photo: "Perfil.webp",     // foto da Paula (primeira dobra)
+    photoBio: "IMG_0306.PNG"  // foto da seção "Quem vai te guiar" (se vazio, usa photo)
   },
 
   // Primeira dobra (hero). Horário vem de eventTime; link vem de checkoutUrl.
