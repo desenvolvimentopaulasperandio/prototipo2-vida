@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inscrição confirmada | Super Aulão da Paula Sperandio</title>
+<meta name="description" content="Sua vaga no Super Aulão Marketing Autêntico está garantida. Entre no grupo do WhatsApp para receber todas as informações.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050505">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0b'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-style='italic' fill='%23f4f1eb'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#050505;
+  --paper:#f6f1e7;
+  --muted:#bcb6a9;
+  --gold:#c9a45c;
+  --gold-l:#e3c88e;
+  --gold-ink:#140d03;
+  --green:#25d366;
+  --green-d:#1ba751;
+  --green-ink:#03200e;
+  --glass:rgba(255,255,255,.05);
+  --glass-line:rgba(246,241,231,.15);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --impact:'Bebas Neue','Arial Narrow',Impact,sans-serif;
+  --gutter:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--black)}
+body{
+  min-height:100vh;
+  color:var(--paper);
+  font-family:var(--sans);
+  font-size:clamp(16px,1.2vw + 12px,18px);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ---------- Atmosfera cinematográfica ---------- */
+/* fundo: preto -> dourado escuro + feixe de luz vindo do topo + vinheta */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 40%,transparent 60%,rgba(0,0,0,.5) 100%),
+    conic-gradient(from 180deg at 50% -12%,transparent 152deg,rgba(227,200,142,.07) 169deg,rgba(255,236,190,.17) 180deg,rgba(227,200,142,.07) 191deg,transparent 208deg),
+    radial-gradient(ellipse 60% 38% at 50% 0,rgba(227,200,142,.28),transparent 72%),
+    radial-gradient(125% 125% at 50% 10%,#000 38%,#6e5520 100%);
+}
+/* granulação de filme + vinheta */
+body::after{
+  content:"";position:fixed;inset:0;z-index:60;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+  opacity:.045;
+}
+
+h1,h2{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.014em;text-wrap:balance}
+p{text-wrap:pretty}
+strong{font-weight:700;color:#fff}
+
+/* ---------- Barra de status ---------- */
+.status{
+  padding:calc(env(safe-area-inset-top) + 16px) var(--gutter) 18px;
+  border-bottom:1px solid var(--glass-line);
+  background:rgba(5,5,5,.55);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+}
+.status-in{max-width:760px;margin:0 auto}
+.status-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.status-top p{font-size:.9rem;font-weight:500;color:var(--paper)}
+.pct{font-family:var(--impact);font-size:1.75rem;line-height:1;letter-spacing:.04em;color:var(--green);font-variant-numeric:tabular-nums;min-width:3.2ch;text-align:right}
+.track{
+  position:relative;height:12px;border-radius:999px;
+  background:rgba(255,255,255,.09);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);
+}
+.fill{
+  position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;
+  background:linear-gradient(90deg,var(--green-d),var(--green));
+  box-shadow:0 0 14px rgba(37,211,102,.65),0 0 32px rgba(37,211,102,.3);
+  overflow:hidden;
+}
+/* brilho que percorre a barra */
+.fill::after{
+  content:"";position:absolute;top:0;bottom:0;left:0;width:40%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:translateX(-120%);
+  animation:varre 1.6s ease-in-out infinite;
+}
+/* ponta luminosa */
+.fill::before{
+  content:"";position:absolute;right:0;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;
+  background:#c9ffe0;filter:blur(3px);opacity:.9;z-index:1;
+}
+.track.done .fill{animation:respira 2.2s ease-in-out infinite}
+@keyframes varre{to{transform:translateX(320%)}}
+@keyframes respira{50%{box-shadow:0 0 8px rgba(37,211,102,.45),0 0 18px rgba(37,211,102,.18)}}
+
+/* ---------- Layout ---------- */
+.wrap{
+  max-width:760px;margin:0 auto;
+  padding:clamp(36px,7vw,84px) var(--gutter) clamp(36px,6vw,64px);
+  display:flex;flex-direction:column;gap:clamp(26px,4vw,44px);
+}
+.hero{text-align:center}
+.seal{
+  width:72px;height:72px;margin:0 auto clamp(18px,3vw,26px);border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(246,241,231,.35);
+  box-shadow:0 0 0 8px rgba(246,241,231,.04),0 0 40px rgba(227,200,142,.25),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.seal svg{width:34px;height:34px}
+.hero h1{
+  font-size:clamp(2.2rem,8.4vw,4.4rem);
+  margin-bottom:clamp(16px,2.4vw,26px);
+  text-shadow:0 2px 40px rgba(227,200,142,.25);
+}
+.hero h1 em{font-style:italic;font-weight:500;color:#fff}
+.hero p{font-size:clamp(1.0625rem,1.4vw + .75rem,1.3rem);color:var(--muted);max-width:32em;margin:0 auto}
+
+/* entrada cinematográfica (uma vez, ao carregar) */
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ---------- Cards ---------- */
+.card{
+  position:relative;
+  border-radius:22px;
+  padding:clamp(26px,5vw,52px) clamp(20px,5vw,52px);
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03));
+  border:1px solid var(--glass-line);
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+  text-align:center;
+}
+.card h2{font-size:clamp(1.6rem,5vw,2.4rem);margin-bottom:clamp(10px,1.6vw,16px)}
+.card p.txt{color:var(--muted);max-width:31em;margin:0 auto clamp(22px,3.4vw,32px)}
+.note{font-size:.875rem;color:var(--muted);margin-top:18px}
+
+/* ---------- Botões ---------- */
+.btn{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;max-width:440px;min-height:58px;margin:0 auto;
+  padding:15px 24px;border-radius:14px;
+  font-family:var(--sans);font-weight:700;font-size:1.0625rem;line-height:1.25;text-align:center;text-decoration:none;letter-spacing:.005em;
+  border:0;cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn svg{width:26px;height:26px;flex:none}
+.btn .arr{width:20px;height:20px;transition:transform .2s ease}
+.btn:hover .arr{transform:translateX(3px)}
+/* reflexo que varre o botão no hover */
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);
+  transform:translateX(-120%);transition:transform .7s ease;
+}
+.btn:hover::before{transform:translateX(120%)}
+
+.btn-wa{
+  min-height:64px;font-size:1.15rem;
+  background:linear-gradient(180deg,#34e07a 0%,var(--green) 45%,var(--green-d) 100%);
+  color:var(--green-ink);
+  box-shadow:0 14px 34px -10px rgba(37,211,102,.7),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.18);
+}
+.btn-wa:hover{box-shadow:0 20px 44px -10px rgba(37,211,102,.85),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.18)}
+/* anel pulsante chamando atenção */
+.wa-wrap{position:relative;max-width:440px;margin:0 auto}
+.wa-wrap::after{
+  content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;
+  box-shadow:0 0 0 0 rgba(37,211,102,.55);
+  animation:halo 2.4s ease-out infinite;
+}
+@keyframes halo{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 16px rgba(37,211,102,0)}}
+
+.btn-gold{
+  background:linear-gradient(180deg,#e7cd92 0%,var(--gold) 50%,#a9822f 100%);
+  color:var(--gold-ink);
+  box-shadow:0 14px 34px -12px rgba(201,164,92,.75),inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 0 rgba(0,0,0,.16);
+}
+.btn-gold:hover{box-shadow:0 20px 44px -12px rgba(201,164,92,.9),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.16)}
+
+/* ---------- Passos ---------- */
+.steps h2{text-align:center;font-size:clamp(1.6rem,5vw,2.4rem);margin-bottom:clamp(18px,3vw,28px)}
+.steps ol{list-style:none;counter-reset:passo;display:flex;flex-direction:column;gap:12px;position:relative}
+.steps li{
+  counter-increment:passo;position:relative;
+  display:flex;gap:16px;align-items:flex-start;
+  border-radius:16px;padding:clamp(16px,3vw,24px);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+  border:1px solid var(--glass-line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+  color:var(--muted);
+}
+.steps li::before{
+  content:counter(passo);
+  flex:none;width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(246,241,231,.4);
+  box-shadow:0 0 18px rgba(246,241,231,.12);
+  font-family:var(--impact);font-size:1.6rem;line-height:1;color:var(--paper);
+  padding-top:2px;position:relative;z-index:1;
+}
+/* fio ligando os passos */
+.steps li:not(:last-child)::after{
+  content:"";position:absolute;
+  left:calc(clamp(16px,3vw,24px) + 24px);
+  top:calc(clamp(16px,3vw,24px) + 48px);
+  height:calc(100% - clamp(16px,3vw,24px) - 48px + 12px + clamp(16px,3vw,24px));
+  width:1px;background:linear-gradient(180deg,rgba(246,241,231,.4),rgba(246,241,231,.05));
+}
+.steps li div{padding-top:2px;min-width:0}
+.steps li strong{display:block;color:var(--paper);font-size:1.0625rem;margin-bottom:2px}
+
+/* ---------- Gravação (único destaque dourado) ---------- */
+.rec{
+  border-color:rgba(201,164,92,.65);
+  background:linear-gradient(180deg,rgba(201,164,92,.16),rgba(201,164,92,.05));
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.9),0 0 60px -10px rgba(201,164,92,.28),inset 0 1px 0 rgba(255,236,190,.3);
+}
+.rec h2{color:var(--gold-l)}
+
+/* ---------- Contagem ---------- */
+.count{text-align:center}
+.count h2{font-size:clamp(1.3rem,3.8vw,1.85rem);margin-bottom:clamp(14px,2.4vw,22px);font-style:italic;font-weight:500}
+.cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(6px,2vw,16px);max-width:540px;margin:0 auto}
+.cell{
+  border-radius:16px;padding:clamp(14px,2.8vw,24px) 4px clamp(10px,2vw,16px);
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  border:1px solid var(--glass-line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 40px -20px rgba(0,0,0,.9);
+  min-width:0;
+}
+.cell b{display:block;font-family:var(--impact);font-weight:400;font-size:clamp(2.1rem,10vw,3.8rem);line-height:1;letter-spacing:.02em;font-variant-numeric:tabular-nums;text-shadow:0 0 24px rgba(246,241,231,.25)}
+.cell span{display:block;margin-top:6px;font-size:clamp(.6875rem,2.4vw,.875rem);color:var(--muted)}
+
+/* ---------- Rodapé ---------- */
+footer{
+  border-top:1px solid var(--glass-line);
+  padding:26px var(--gutter) calc(26px + env(safe-area-inset-bottom));
+  text-align:center;font-size:.8125rem;color:var(--muted);
+}
+footer p{max-width:36em;margin:0 auto}
+
+/* ---------- Tablet ---------- */
+@media (min-width:600px){
+  :root{--gutter:24px}
+  .steps li{gap:20px}
+}
+/* ---------- Desktop ---------- */
+@media (min-width:1024px){
+  .wrap{padding-top:96px;padding-bottom:80px;gap:52px}
+  .card{padding:60px 72px}
+}
+/* ---------- Telas muito estreitas ---------- */
+@media (max-width:359px){
+  .btn{padding:12px 14px;font-size:1rem}
+  .btn svg{width:22px;height:22px}
+  .btn .arr{display:none}
+  .steps li{gap:12px}
+  .steps li::before{width:40px;height:40px;font-size:1.4rem}
+  .steps li:not(:last-child)::after{left:calc(clamp(16px,3vw,24px) + 20px);top:calc(clamp(16px,3vw,24px) + 40px);height:calc(100% - clamp(16px,3vw,24px) - 40px + 12px + clamp(16px,3vw,24px))}
+}
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){
+  .rise,.fill::after,.wa-wrap::after,.track.done .fill{animation:none}
+  .btn,.btn .arr,.btn::before{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="status" role="status">
+  <div class="status-in">
+    <div class="status-top">
+      <p>Finalizando sua inscrição…</p>
+      <span class="pct" id="pct" aria-hidden="true">0%</span>
+    </div>
+    <div class="track" id="track" aria-hidden="true"><span class="fill" id="fill"></span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="hero" aria-labelledby="titulo">
+    <div class="seal rise" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f6f1e7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12.5l4.2 4.2L19 7"/></svg>
+    </div>
+    <h1 id="titulo" class="rise" style="--d:.12s">Sua inscrição está <em>confirmada!</em></h1>
+    <p class="rise" style="--d:.24s">Parabéns! Sua vaga no <strong>Super Aulão Marketing Autêntico</strong>. Falta só um passo para receber todas as informações importantes.</p>
+  </section>
+
+  <section class="card rise" style="--d:.36s" aria-labelledby="t-whats">
+    <h2 id="t-whats">Entre no grupo do WhatsApp</h2>
+    <p class="txt">É por lá que enviamos os avisos, novidades, e o link do Super Aulão. Esta é a única forma de receber tudo a tempo.</p>
+    <div class="wa-wrap">
+      <a class="btn btn-wa" id="btn-whatsapp" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.16 6.45 6.6 2 12.06 2c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.9-9.89 9.9zM20.5 3.49A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.45-8.42z"/></svg>
+        <span>Entrar no grupo agora</span>
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <p class="note">Os grupos são silenciosos: só enviamos o essencial.</p>
+  </section>
+
+  <section class="steps rise" style="--d:.48s" aria-labelledby="t-passos">
+    <h2 id="t-passos">O que acontece agora</h2>
+    <ol>
+      <li><div><strong>Entre no grupo</strong>Os avisos importantes sobre o aulão chegam por lá.</div></li>
+      <li><div><strong>Fique de olho no seu WhatsApp</strong>Você também recebe por lá as informações da sua compra.</div></li>
+      <li><div><strong>Acesse sua área de membros</strong>A Kiwify libera seu acesso e envia as instruções por e-mail e WhatsApp. Confira também a caixa de spam e promoções.</div></li>
+    </ol>
+  </section>
+
+  <section class="card rec rise" style="--d:.6s" aria-labelledby="t-rec">
+    <h2 id="t-rec">Quer assistir de novo, quando e quantas vezes quiser?</h2>
+    <p class="txt">Se você não incluiu a gravação na sua inscrição, ainda pode adicioná-la agora. Ela ficará disponível na sua área de membros depois do encontro, para você rever os ensinamentos da Paula no seu ritmo.</p>
+    <a class="btn btn-gold" id="btn-gravacao" href="#" rel="noopener">
+      <span>Quero adicionar a gravação</span>
+      <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="note">Já comprou a gravação? Não precisa fazer nada: ela estará na sua área de membros depois do encontro.</p>
+  </section>
+
+  <section class="count rise" style="--d:.72s" aria-labelledby="t-count">
+    <h2 id="t-count">Nos vemos em</h2>
+    <div class="cells" role="timer" aria-live="off">
+      <div class="cell"><b id="cd-d">00</b><span>dias</span></div>
+      <div class="cell"><b id="cd-h">00</b><span>horas</span></div>
+      <div class="cell"><b id="cd-m">00</b><span>min</span></div>
+      <div class="cell"><b id="cd-s">00</b><span>seg</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Paula Sperandio. Todos os direitos reservados. Seus dados estão seguros e protegidos pela LGPD.</p>
+</footer>
+
+<script>
+/* ===== CONFIGURAÇÃO (edite aqui) ===== */
+const LINK_WHATSAPP = "https://chat.whatsapp.com/FxvnskzSJejK6Zwd1xs5Un";
+const LINK_CHECKOUT_GRAVACAO = "https://pay.kiwify.com.br/6fysfRH";
+const DATA_EVENTO = "2026-12-12T14:00:00-03:00"; // 12/12/2026 às 14h (Brasília)
+/* ===================================== */
+
+(function () {
+  /* links */
+  var wa = document.getElementById("btn-whatsapp");
+  wa.href = LINK_WHATSAPP;
+  wa.target = "_blank";
+  wa.rel = "noopener";
+  var rec = document.getElementById("btn-gravacao");
+  rec.href = LINK_CHECKOUT_GRAVACAO;
+  rec.rel = "noopener";
+
+  /* barra de progresso: conta de 0% a 92% junto com o preenchimento */
+  var ALVO = 92, DURACAO = 3400;
+  var fill = document.getElementById("fill");
+  var pct = document.getElementById("pct");
+  var track = document.getElementById("track");
+  var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function mostrar(v) {
+    fill.style.width = v + "%";
+    pct.textContent = Math.round(v) + "%";
+  }
+  if (reduz) {
+    mostrar(90);
+  } else {
+    var t0 = null;
+    var passo = function (t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min(1, (t - t0) / DURACAO);
+      var e = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      mostrar(ALVO * e);
+      if (p < 1) requestAnimationFrame(passo);
+      else { mostrar(ALVO); track.classList.add("done"); }
+    };
+    requestAnimationFrame(passo);
+  }
+
+  /* contagem regressiva */
+  var alvo = new Date(DATA_EVENTO).getTime();
+  var el = {
+    d: document.getElementById("cd-d"),
+    h: document.getElementById("cd-h"),
+    m: document.getElementById("cd-m"),
+    s: document.getElementById("cd-s")
+  };
+  function dois(n) { return n < 10 ? "0" + n : String(n); }
+  function tick() {
+    var resto = Math.max(0, Math.floor((alvo - Date.now()) / 1000));
+    if (isNaN(resto)) resto = 0;
+    el.d.textContent = dois(Math.floor(resto / 86400));
+    el.h.textContent = dois(Math.floor(resto % 86400 / 3600));
+    el.m.textContent = dois(Math.floor(resto % 3600 / 60));
+    el.s.textContent = dois(resto % 60);
+    if (resto === 0) clearInterval(timer);
+  }
+  var timer = setInterval(tick, 1000);
+  tick();
+})();
+</script>
+</body>
+</html>
