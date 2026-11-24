@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu bônus 12/12 | Paula Sperandio</title>
+<meta name="description" content="Libere seu bônus: pílulas de conteúdo e mentorias da Paula Sperandio, só para quem respondeu 12/12.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23feda75'/%3E%3Cstop offset='.35' stop-color='%23fa7e1e'/%3E%3Cstop offset='.6' stop-color='%23d62976'/%3E%3Cstop offset='1' stop-color='%23962fbf'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 46s-14-8.6-14-19a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 10.4-14 19-14 19z' fill='%23fff'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  /* Dark mode do Instagram */
+  --bg:#000;
+  --surface:#121212;
+  --surface-2:#1c1c1c;
+  --line:#262626;
+  --line-2:#363636;
+  --text:#f5f5f5;
+  --muted:#a8a8a8;
+  --link:#e0f1ff;
+  --error:#ff6b81;
+  --ok:#58c322;
+
+  /* Gradiente da marca Instagram */
+  --ig-yellow:#feda75;
+  --ig-orange:#fa7e1e;
+  --ig-pink:#d62976;
+  --ig-purple:#962fbf;
+  --ig-indigo:#4f5bd5;
+  --ig-grad:linear-gradient(45deg,#feda75 0%,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5 100%);
+  --ig-grad-btn:linear-gradient(90deg,#fa7e1e 0%,#d62976 50%,#962fbf 100%);
+
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --gutter:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg);color-scheme:dark}
+body{
+  min-height:100vh;min-height:100dvh;
+  background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:14px;line-height:1.43;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+button,input{font:inherit;color:inherit}
+a{color:inherit}
+
+/* brilho de fundo, como a tela de story */
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.glow i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.38}
+.glow i:nth-child(1){width:380px;height:380px;background:var(--ig-purple);top:-140px;left:-120px}
+.glow i:nth-child(2){width:340px;height:340px;background:var(--ig-pink);top:20%;right:-160px;opacity:.28}
+.glow i:nth-child(3){width:360px;height:360px;background:var(--ig-orange);bottom:-170px;left:10%;opacity:.26}
+
+.app{
+  position:relative;z-index:1;
+  width:100%;max-width:470px;margin:0 auto;
+  min-height:100vh;min-height:100dvh;
+  background:rgba(0,0,0,.72);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+  display:flex;flex-direction:column;
+  padding-bottom:max(28px,env(safe-area-inset-bottom));
+}
+@media(min-width:520px){
+  .app{margin:24px auto;min-height:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:rgba(0,0,0,.82)}
+}
+
+/* barra de progresso de story */
+.story-bars{display:flex;gap:4px;padding:10px var(--gutter) 0}
+.story-bars span{flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,.28);overflow:hidden}
+.story-bars span.on::after{content:"";display:block;height:100%;width:100%;background:#fff;transform-origin:left;animation:fill 6s linear both}
+.story-bars span.done::after{content:"";display:block;height:100%;background:#fff}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* cabeçalho */
+.head{display:flex;align-items:center;gap:12px;padding:12px var(--gutter)}
+.ring{
+  width:48px;height:48px;border-radius:50%;padding:2px;flex:none;
+  background:var(--ig-grad);
+  animation:spin-ring 6s linear infinite;
+}
+.ring-inner{width:100%;height:100%;border-radius:50%;background:#000;padding:2px;animation:spin-ring-rev 6s linear infinite}
+.ring-inner img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 28%;display:block}
+@keyframes spin-ring{to{transform:rotate(360deg)}}
+@keyframes spin-ring-rev{to{transform:rotate(-360deg)}}
+.who{min-width:0;flex:1}
+.who b{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:600}
+.who b svg{width:14px;height:14px;flex:none}
+.who small{display:block;color:var(--muted);font-size:12px}
+.pill{
+  flex:none;font-size:12px;font-weight:600;padding:5px 12px;border-radius:8px;
+  background:var(--surface-2);border:1px solid var(--line-2);
+}
+
+/* "post" com o bônus trancado */
+.media{
+  position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;
+  background:#0b0b0b;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.media::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(70% 60% at 20% 15%,rgba(150,47,191,.75),transparent 70%),
+    radial-gradient(70% 60% at 85% 30%,rgba(214,41,118,.7),transparent 70%),
+    radial-gradient(80% 70% at 50% 100%,rgba(250,126,30,.7),transparent 70%),
+    #120612;
+}
+.grid{
+  position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px;
+  transition:filter .9s ease,transform .9s ease;
+}
+.locked .grid{filter:blur(14px) saturate(1.2);transform:scale(1.06)}
+.tile{
+  border-radius:3px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:8px;
+  font-weight:700;font-size:13px;line-height:1.2;text-shadow:0 1px 8px rgba(0,0,0,.5);
+}
+.tile svg{width:22px;height:22px;margin-bottom:auto;opacity:.95}
+.tile:nth-child(1){background:linear-gradient(160deg,rgba(254,218,117,.55),rgba(250,126,30,.45))}
+.tile:nth-child(2){background:linear-gradient(160deg,rgba(214,41,118,.6),rgba(150,47,191,.5))}
+.tile:nth-child(3){background:linear-gradient(160deg,rgba(150,47,191,.6),rgba(79,91,213,.5))}
+.tile:nth-child(4){background:linear-gradient(160deg,rgba(250,126,30,.5),rgba(214,41,118,.55))}
+.tile:nth-child(5){background:linear-gradient(160deg,rgba(79,91,213,.55),rgba(150,47,191,.5))}
+.tile:nth-child(6){background:linear-gradient(160deg,rgba(214,41,118,.55),rgba(254,218,117,.4))}
+
+.lock{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  text-align:center;padding:24px;transition:opacity .5s ease,transform .5s ease;
+}
+.lock-badge{
+  width:76px;height:76px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.25);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  box-shadow:0 0 0 6px rgba(255,255,255,.06),0 10px 40px rgba(214,41,118,.45);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+.lock-badge svg{width:34px;height:34px}
+@keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 0 12px rgba(255,255,255,.03),0 10px 50px rgba(214,41,118,.6)}}
+.lock h1{font-size:22px;line-height:1.2;font-weight:700;letter-spacing:-.2px;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.lock p{font-size:13px;color:#e6e6e6;max-width:30ch;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.unlocked .lock{opacity:0;transform:scale(1.15);pointer-events:none}
+
+/* ações do post */
+.actions{display:flex;align-items:center;gap:16px;padding:10px var(--gutter) 4px}
+.actions button{background:none;border:0;padding:0;display:grid;place-items:center;cursor:pointer;width:26px;height:26px}
+.actions svg{width:24px;height:24px;display:block}
+.actions .push{margin-left:auto}
+.heart.liked svg{fill:#ff3040;stroke:#ff3040;animation:pop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.35)}100%{transform:scale(1)}}
+.likes{padding:0 var(--gutter);font-weight:600}
+.caption{padding:4px var(--gutter) 0;color:#e8e8e8}
+.caption b{font-weight:600;color:var(--text)}
+.caption .tag{color:#9fd0ff;word-break:break-word}
+
+/* card de cadastro / liberado */
+.sheet{margin:18px var(--gutter) 0;border:1px solid var(--line-2);border-radius:14px;background:var(--surface);padding:18px 16px}
+.sheet h2{font-size:16px;font-weight:700;line-height:1.25}
+.sheet .sub{color:var(--muted);font-size:13px;margin-top:4px}
+.steps{display:flex;gap:6px;margin:12px 0 14px}
+.steps span{flex:1;height:3px;border-radius:3px;background:var(--line-2)}
+.steps span.on{background:var(--ig-grad-btn)}
+
+.field{position:relative;margin-bottom:10px}
+.field label{
+  position:absolute;left:12px;top:15px;font-size:14px;color:var(--muted);pointer-events:none;
+  transform-origin:left top;transition:transform .15s ease;
+}
+.field .pre{position:absolute;left:12px;bottom:7px;color:var(--muted);font-size:14px;opacity:0;transition:opacity .15s}
+.field input{
+  width:100%;height:50px;padding:20px 12px 5px 12px;border-radius:8px;
+  background:var(--surface-2);border:1px solid var(--line-2);outline:none;font-size:16px;
+  transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none;
+}
+.field.has-pre input:focus,.field.has-pre input:not(:placeholder-shown){padding-left:24px}
+.field input:focus{border-color:#a8a8a8}
+.field input:focus-visible{box-shadow:0 0 0 2px rgba(214,41,118,.55)}
+.field input:focus + label,.field input:not(:placeholder-shown) + label{transform:translateY(-9px) scale(.78)}
+.field.has-pre input:focus ~ .pre,.field.has-pre input:not(:placeholder-shown) ~ .pre{opacity:1}
+.field.bad input{border-color:var(--error)}
+.err{display:none;color:var(--error);font-size:12px;margin:-4px 2px 10px}
+.field.bad + .err{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.btn{
+  width:100%;height:46px;border:0;border-radius:10px;cursor:pointer;
+  font-weight:700;font-size:15px;color:#fff;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--ig-grad-btn);background-size:160% 100%;
+  box-shadow:0 8px 28px -8px rgba(214,41,118,.7);
+  transition:transform .12s ease,background-position .4s ease,opacity .2s;
+}
+.btn:hover{background-position:100% 0}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.btn[disabled]{opacity:.65;cursor:progress}
+.btn .spin{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;animation:rot .7s linear infinite;display:none}
+.btn.loading .spin{display:block}
+@keyframes rot{to{transform:rotate(360deg)}}
+.btn.ghost{background:var(--surface-2);border:1px solid var(--line-2);box-shadow:none}
+.btn.ghost:hover{background:#262626}
+
+.legal{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.4;text-align:center}
+.form-err{display:none;margin-top:10px;padding:10px 12px;border-radius:8px;background:rgba(255,107,129,.1);border:1px solid rgba(255,107,129,.4);color:#ffb3c0;font-size:13px}
+.form-err.show{display:block}
+
+/* estado liberado */
+.done{display:none}
+.unlocked .done{display:block;animation:rise .6s .25s cubic-bezier(.2,.8,.2,1) both}
+.unlocked .overlay{display:none}
+
+/* pop-up de cadastro */
+.lock-badge{cursor:pointer;color:inherit;padding:0}
+.lock-badge:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.lock .tap{
+  margin-top:2px;font-size:12px;font-weight:700;padding:7px 14px;border-radius:999px;
+  background:var(--ig-grad-btn);box-shadow:0 6px 22px -6px rgba(214,41,118,.8);
+}
+.locked .lock{cursor:pointer}
+.overlay{
+  position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center;
+  background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s .25s;
+}
+.overlay.open{opacity:1;visibility:visible;transition:opacity .25s ease}
+.overlay .sheet{
+  position:relative;width:100%;max-width:470px;margin:0;
+  max-height:94vh;max-height:94dvh;overflow-y:auto;
+  border-radius:20px 20px 0 0;border-bottom:0;padding:10px 18px max(22px,env(safe-area-inset-bottom));
+  transform:translateY(40px);transition:transform .35s cubic-bezier(.2,.9,.3,1);
+}
+.overlay.open .sheet{transform:none}
+.grab{display:block;width:40px;height:4px;border-radius:4px;background:var(--line-2);margin:0 auto 14px}
+.close{
+  position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;border:0;cursor:pointer;
+  display:grid;place-items:center;background:var(--surface-2);color:var(--muted);
+}
+.close svg{width:16px;height:16px}
+.close:hover{color:var(--text)}
+.close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.overlay .sheet h2{padding-right:36px}
+@media(min-width:520px){
+  .overlay{align-items:center}
+  .overlay .sheet{border-radius:16px;border-bottom:1px solid var(--line-2);padding-top:22px;max-width:420px}
+  .grab{display:none}
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.done .ok{display:flex;align-items:center;gap:8px;color:var(--ok);font-weight:600;font-size:13px;margin-bottom:6px}
+.done .ok svg{width:18px;height:18px}
+.done .btn{margin-top:14px}
+
+/* aulão como "resposta do story" */
+.dm{margin:14px var(--gutter) 0;display:flex;gap:10px;align-items:flex-end}
+.dm .mini{width:28px;height:28px;border-radius:50%;flex:none;padding:1.5px;background:var(--ig-grad)}
+.dm .mini img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 28%;border:1.5px solid #000;display:block}
+.bubble{
+  background:var(--surface-2);border-radius:20px 20px 20px 6px;padding:12px 14px;max-width:100%;
+  border:1px solid var(--line);
+}
+.bubble p{font-size:14px}
+.bubble a{
+  display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-weight:700;text-decoration:none;
+  background:var(--ig-grad-btn);padding:9px 14px;border-radius:999px;color:#fff;font-size:13px;
+}
+.bubble a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.aulao{display:none}
+.unlocked .aulao{display:flex;animation:rise .6s .55s cubic-bezier(.2,.8,.2,1) both}
+
+.foot{margin-top:auto;padding:22px var(--gutter) 0;text-align:center;color:#6e6e6e;font-size:11px}
+
+/* corações subindo (liberação) */
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.hearts svg{position:absolute;bottom:-30px;width:22px;height:22px;opacity:0;animation:up 2.6s ease-out forwards}
+@keyframes up{0%{opacity:0;transform:translateY(0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translateY(-82vh) translateX(var(--dx)) scale(1.2)}}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<main class="app locked" id="app">
+  <div class="story-bars" aria-hidden="true"><span class="done"></span><span class="on"></span><span></span></div>
+
+  <header class="head">
+    <div class="ring"><div class="ring-inner"><img src="../Perfil.webp" alt="Foto da Paula Sperandio" width="44" height="44"></div></div>
+    <div class="who">
+      <b>apaulasperandio
+        <svg viewBox="0 0 24 24" aria-label="Perfil verificado" role="img"><path fill="#0095f6" d="M12 1.5l2.6 1.9 3.2-.1 1 3 2.7 1.8-.9 3.1.9 3.1-2.7 1.8-1 3-3.2-.1L12 22.5l-2.6-1.9-3.2.1-1-3-2.7-1.8.9-3.1-.9-3.1 2.7-1.8 1-3 3.2.1z"/><path fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 12.3l2.7 2.7L16 9.6"/></svg>
+      </b>
+      <small>Só para quem respondeu 12/12</small>
+    </div>
+    <span class="pill">Bônus</span>
+  </header>
+
+  <section class="media" aria-label="Prévia do bônus">
+    <div class="grid" aria-hidden="true">
+      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 8.5l5 3.5-5 3.5z" fill="#fff"/></svg>Pílulas de conteúdo</div>
+      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Mentorias</div>
+      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>Materiais extras</div>
+      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg>Passo a passo</div>
+      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Download livre</div>
+      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>De presente</div>
+    </div>
+    <div class="lock">
+      <button type="button" class="lock-badge" id="open-gate" aria-haspopup="dialog" aria-label="Tocar no cadeado para liberar o bônus">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10.5" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>
+      </button>
+      <h1>Seu bônus está trancado</h1>
+      <p>Toque no cadeado para liberar o seu acesso.</p>
+      <span class="tap" aria-hidden="true">Toque para liberar</span>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button type="button" class="heart" id="heart" aria-label="Curtir" aria-pressed="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
+    </button>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 3L9.2 10.8M22 3l-7 18-5.8-10.2M22 3L2 9l7.2 1.8"/></svg>
+    <svg class="push" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18l-7-5-7 5z"/></svg>
+  </div>
+  <p class="likes">Para quem respondeu 12/12</p>
+  <p class="caption"><b>apaulasperandio</b> Fim de ano chegando e eu separei pílulas de conteúdo, mentorias e mais coisas pra quem tá junto. <span class="tag">#marketingautentico</span></p>
+
+
+  <!-- ETAPA 2: liberado -->
+  <section class="sheet done" id="done" aria-live="polite" aria-labelledby="done-t">
+    <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Acesso liberado</div>
+    <h2 id="done-t">Seu bônus está aberto 🎁</h2>
+    <p class="sub">Pílulas de conteúdo, mentorias e materiais, tudo na mesma pasta.</p>
+    <a class="btn" id="drive" href="#" target="_blank" rel="noopener noreferrer">Abrir meu bônus</a>
+  </section>
+
+  <div class="dm aulao" id="aulao">
+    <span class="mini"><img src="../Perfil.webp" alt=""></span>
+    <div class="bubble">
+      <p><b>E tem mais:</b> dia 12/12 eu vou te ensinar a gravar conteúdo de verdade no Super Aulão.</p>
+      <a id="aulao-link" href="#" target="_blank" rel="noopener noreferrer">Quero participar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <p class="foot">Paula Sperandio · Marketing Autêntico</p>
+</main>
+  <!-- ETAPA 1: cadastro (pop-up aberto pelo cadeado) -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+  <section class="sheet gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
+    <span class="grab" aria-hidden="true"></span>
+    <button type="button" class="close" id="close-gate" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2 id="gate-t">Libere seu acesso</h2>
+    <p class="sub">Leva 10 segundos. É só isso, sem cadastro nem senha.</p>
+    <div class="steps" aria-hidden="true"><span class="on"></span><span class="on"></span></div>
+
+    <form id="form" novalidate autocomplete="on">
+      <div class="field has-pre" id="f-ig">
+        <input id="ig" name="instagram" type="text" inputmode="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="31" placeholder=" " aria-describedby="e-ig" required>
+        <label for="ig">Seu Instagram</label>
+        <span class="pre" aria-hidden="true">@</span>
+      </div>
+      <p class="err" id="e-ig" role="alert">Digite seu @ do Instagram (letras, números, ponto ou _).</p>
+
+      <div class="field" id="f-wa">
+        <input id="wa" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="15" placeholder=" " aria-describedby="e-wa" required>
+        <label for="wa">Seu WhatsApp com DDD</label>
+      </div>
+      <p class="err" id="e-wa" role="alert">Digite um WhatsApp válido com DDD.</p>
+
+      <div class="hp" aria-hidden="true"><label>Não preencha<input type="text" name="site" id="site" tabindex="-1" autocomplete="off"></label></div>
+
+      <button class="btn" id="submit" type="submit"><span class="spin" aria-hidden="true"></span><span id="submit-t">Liberar meu bônus</span></button>
+      <p class="form-err" id="form-err" role="alert"></p>
+      <p class="legal">Ao continuar, você aceita receber conteúdos da Paula no WhatsApp. Seus dados não são compartilhados.</p>
+    </form>
+  </section>
+  </div>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<script src="../config.js"></script>
+<script src="../src/lib/tracking/utm.js"></script>
+<script>
+(function () {
+  'use strict';
+  var app = document.getElementById('app');
+  var form = document.getElementById('form');
+  var igI = document.getElementById('ig'), waI = document.getElementById('wa');
+  var fIg = document.getElementById('f-ig'), fWa = document.getElementById('f-wa');
+  var btn = document.getElementById('submit'), btnT = document.getElementById('submit-t');
+  var formErr = document.getElementById('form-err');
+  var KEY = 'bonus1212_v1';
+  var S = (window.LP_CONFIG && window.LP_CONFIG.supabase) || {};
+  if (window.VIDA && VIDA.utm) VIDA.utm.capture();
+
+  /* ---------- helpers ---------- */
+  function normIg(v) {
+    v = String(v || '').trim();
+    v = v.replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/[/?#].*$/, '');
+    return v.replace(/^@+/, '').replace(/\s/g, '').toLowerCase();
+  }
+  function validIg(v) { return /^[a-z0-9._]{1,30}$/.test(v); }
+  function digits(v) { return String(v || '').replace(/\D/g, ''); }
+  function normWa(v) {
+    var d = digits(v);
+    if (d.indexOf('55') === 0 && d.length > 11) d = d.slice(2);
+    return d;
+  }
+  function validWa(d) { return /^[1-9][0-9]9[0-9]{8}$/.test(d); }
+  function maskWa(v) {
+    var d = normWa(v).slice(0, 11), o = '';
+    if (d.length > 0) o = '(' + d.slice(0, 2);
+    if (d.length >= 2) o += ') ';
+    if (d.length > 2) o += d.slice(2, 7);
+    if (d.length > 7) o += '-' + d.slice(7);
+    return o;
+  }
+  function setBad(field, bad) { field.classList.toggle('bad', !!bad); }
+
+  igI.addEventListener('input', function () {
+    var c = igI.value.replace(/^@+/, '');
+    if (c !== igI.value) igI.value = c;
+    setBad(fIg, false);
+  });
+  waI.addEventListener('input', function () { waI.value = maskWa(waI.value); setBad(fWa, false); });
+
+  /* ---------- liberação ---------- */
+  function hearts() {
+    var box = document.getElementById('hearts');
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var cols = ['#feda75', '#fa7e1e', '#d62976', '#962fbf', '#ff3040'];
+    for (var i = 0; i < 18; i++) {
+      var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      s.setAttribute('viewBox', '0 0 24 24');
+      s.innerHTML = '<path d="M12 21.5l-8.8-8.8a5 5 0 0 1 7.1-7.1L12 7.3l1.7-1.7a5 5 0 0 1 7.1 7.1z" fill="' + cols[i % cols.length] + '"/>';
+      s.style.left = (10 + Math.random() * 80) + '%';
+      s.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+      s.style.animationDelay = (Math.random() * 0.9) + 's';
+      box.appendChild(s);
+    }
+    setTimeout(function () { box.innerHTML = ''; }, 4200);
+  }
+
+  function liberar(r, animar) {
+    document.getElementById('drive').href = r.drive_url;
+    document.getElementById('aulao-link').href = r.aulao_url;
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    app.classList.remove('locked');
+    app.classList.add('unlocked');
+    document.title = 'Bônus liberado | Paula Sperandio';
+    var bars = document.querySelectorAll('.story-bars span');
+    if (bars[1]) { bars[1].className = 'done'; }
+    if (bars[2]) { bars[2].className = 'on'; }
+    if (animar) { hearts(); document.getElementById('done').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    if (window.fbq) { try { fbq('track', 'Lead'); } catch (e) {} }
+  }
+
+  function carregarSalvo() {
+    try {
+      var j = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (j && /^https:\/\//.test(j.drive_url || '') && /^https:\/\//.test(j.aulao_url || '')) return j;
+    } catch (e) {}
+    return null;
+  }
+  function salvar(r) {
+    try { localStorage.setItem(KEY, JSON.stringify({ drive_url: r.drive_url, aulao_url: r.aulao_url })); } catch (e) {}
+  }
+
+  /* ---------- envio ---------- */
+  function mensagemErro(code) {
+    if (code === 'rate_limited') return 'Muitas tentativas. Espere um minuto e tente de novo.';
+    if (code === 'config_error') return 'A página ainda não está configurada. Avise a Paula.';
+    return 'Não consegui liberar agora. Confira sua internet e tente de novo.';
+  }
+
+  function enviar(ig, wa) {
+    var h = location.hostname;
+    var local = h === 'localhost' || h === '127.0.0.1';
+    if (local && new URLSearchParams(location.search).get('mock')) {
+      return new Promise(function (ok) {
+        setTimeout(function () {
+          ok({ ok: true, drive_url: 'https://drive.google.com/', aulao_url: 'https://marketingautentico.vercel.app' });
+        }, 900);
+      });
+    }
+    var base = String(S.url || '').replace(/\/+$/, '');
+    if (!base || !S.anonKey) return Promise.resolve({ ok: false, code: 'config_error' });
+    var headers = { 'Content-Type': 'application/json', apikey: S.anonKey };
+    if (/^eyJ/.test(S.anonKey)) headers.Authorization = 'Bearer ' + S.anonKey;
+    var ctrl = new AbortController();
+    var t = setTimeout(function () { ctrl.abort(); }, 15000);
+    return fetch(base + '/rest/v1/rpc/liberar_bonus', {
+      method: 'POST', headers: headers, signal: ctrl.signal,
+      body: JSON.stringify({
+        p_instagram: ig, p_whatsapp: '55' + wa, p_origem: location.href,
+        p_utm: (window.VIDA && VIDA.utm) ? VIDA.utm.get() : {}
+      })
+    }).then(function (r) {
+      return r.json().then(function (j) { return r.ok ? j : { ok: false, code: r.status === 429 ? 'rate_limited' : 'network_error' }; });
+    }).catch(function () {
+      return { ok: false, code: 'network_error' };
+    }).then(function (r) { clearTimeout(t); return r; });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    formErr.classList.remove('show');
+    if (document.getElementById('site').value) return; /* honeypot */
+
+    var ig = normIg(igI.value), wa = normWa(waI.value);
+    var okIg = validIg(ig), okWa = validWa(wa);
+    setBad(fIg, !okIg); setBad(fWa, !okWa);
+    if (!okIg) { igI.focus(); return; }
+    if (!okWa) { waI.focus(); return; }
+
+    btn.disabled = true; btn.classList.add('loading'); btnT.textContent = 'Liberando…';
+    enviar(ig, wa).then(function (r) {
+      btn.disabled = false; btn.classList.remove('loading'); btnT.textContent = 'Liberar meu bônus';
+      if (r && r.ok === true && r.drive_url && r.aulao_url) { salvar(r); liberar(r, true); return; }
+      if (r && r.fields) {
+        if (r.fields.instagram) { setBad(fIg, true); igI.focus(); }
+        if (r.fields.whatsapp) { setBad(fWa, true); if (!r.fields.instagram) waI.focus(); }
+        return;
+      }
+      formErr.textContent = mensagemErro(r && r.code);
+      formErr.classList.add('show');
+    });
+  });
+
+  /* ---------- pop-up (abre pelo cadeado) ---------- */
+  var overlay = document.getElementById('overlay');
+  var opener = document.getElementById('open-gate');
+  function abrirPopup() {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { igI.focus(); }, 300);
+  }
+  function fecharPopup() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    opener.focus();
+  }
+  document.querySelector('.lock').addEventListener('click', function (e) {
+    if (app.classList.contains('locked')) abrirPopup();
+  });
+  document.getElementById('close-gate').addEventListener('click', fecharPopup);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) fecharPopup(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) fecharPopup();
+    if (e.key === 'Tab' && overlay.classList.contains('open')) {
+      var f = overlay.querySelectorAll('button:not([disabled]),input:not([tabindex="-1"])');
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- curtir ---------- */
+  var heart = document.getElementById('heart');
+  heart.addEventListener('click', function () {
+    var on = heart.classList.toggle('liked');
+    heart.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+
+  /* quem já liberou volta direto para o bônus */
+  var salvo = carregarSalvo();
+  if (salvo) liberar(salvo, false);
+})();
+</script>
+</body>
+</html>
