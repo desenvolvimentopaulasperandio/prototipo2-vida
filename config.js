@@ -5,7 +5,7 @@
    ============================================================ */
 window.LP_CONFIG = {
   // Link do checkout do Super Aulão (R$47). A oferta da gravação (+R$37) é configurada no checkout.
-  checkoutUrl: "https://pay.kiwify.com.br/rIiYAl1",            // ex.: "https://pay.exemplo.com/super-aulao"
+  checkoutUrl: "https://pay.kiwify.com.br/KHbJKkH",            // ex.: "https://pay.exemplo.com/super-aulao"
 
   // Tracking (não colocar IDs fictícios)
   metaPixelId: "",            // ex.: "123456789012345"

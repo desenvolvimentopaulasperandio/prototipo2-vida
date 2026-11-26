@@ -138,7 +138,7 @@ for (const [nomeDev, w, h, mobile] of DEVICES) {
     assert.equal(srv.leads[0].status_webhook, 'sent');
     const ok = await p.ev(`({on:document.querySelector('.im-ok').classList.contains('on'),title:document.getElementById('im-ok-title').textContent,text:document.querySelector('.im-ok .im-sub').textContent,btns:[...document.querySelectorAll('.im-btns > *')].map(b=>b.textContent+'|'+(b.getAttribute('href')||'')),focus:document.activeElement.id,form:document.getElementById('im-nome').value})`);
     assert.equal(ok.on, true); assert.equal(ok.title, 'Inscrição recebida!'); assert.match(ok.text, /Finalize o pagamento.*12 de dezembro às 14h/);
-    assert.match(ok.btns[0], /^Ir para o pagamento\|https:\/\/pay\.kiwify\.com\.br\/rIiYAl1\?.*utm_source=ig/); assert.equal(ok.btns[1], 'Fechar|');
+    assert.match(ok.btns[0], /^Ir para o pagamento\|https:\/\/pay\.kiwify\.com\.br\/KHbJKkH\?.*utm_source=ig/); assert.equal(ok.btns[1], 'Fechar|');
     assert.equal(ok.focus, 'im-ok-title'); assert.equal(ok.form, '');
     await p.shot(`${nomeDev.replace(' ', '_')}_3_sucesso`);
   });
