@@ -81,6 +81,13 @@ strong{font-weight:600}
 /* HERO */
 .hero{padding:0 0 clamp(36px,6vw,72px);position:relative;overflow:hidden;text-align:center}
 .topbar{position:sticky;top:0;z-index:80;background:#D91F14;color:#fff;display:flex;align-items:center;justify-content:center;min-height:38px;padding:env(safe-area-inset-top,0) 12px 0;box-sizing:content-box;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(10px,3.1vw,12px);line-height:1.2;white-space:nowrap;text-align:center}
+.topbar{overflow:hidden;justify-content:flex-start;padding-left:0;padding-right:0}
+.tb-track{display:inline-flex;flex:none;white-space:nowrap;animation:tb 34s linear infinite;will-change:transform}
+.tb-track span{display:inline-flex;align-items:center;font-family:var(--serif);font-size:clamp(13px,3.6vw,16px);font-weight:600;letter-spacing:.08em;padding:0 22px}
+.tb-track span::after{content:"✦";margin-left:44px;opacity:.75;font-size:.85em}
+.tb-track .tb-live::before{content:"";width:8px;height:8px;margin-right:10px;border-radius:50%;background:#fff;flex:none;animation:tbpulse 1.4s ease-out infinite}
+@keyframes tb{to{transform:translateX(-50%)}}
+@keyframes tbpulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.75)}100%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
 .hphoto{position:relative;height:clamp(200px,58vw,260px);background:#1a1815}
 .hphoto img{width:100%;height:100%;object-fit:cover;object-position:52% 10%}
 .hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,11,0) 35%,rgba(10,10,11,.7) 75%,var(--black) 100%);pointer-events:none}
@@ -592,7 +599,15 @@ details p{padding:0 0 30px;color:var(--muted);max-width:680px}
   /* ---------- Hero: textos vindos do config.js (evento) ---------- */
   var E=Object.assign({dataCurta:'12 DE DEZEMBRO',dataExtenso:'12 de dezembro',gratuito:false,vagasLimitadas:false},C.evento||{});
   var hor=(C.eventTime||'').toUpperCase();
-  $('#topbar').textContent=(E.gratuito?'AO VIVO E GRATUITO':'AO VIVO')+' · '+E.dataCurta+(hor?' · '+hor:'');
+  /* Faixa vermelha: letreiro animado (ENCONTRO AO VIVO ✦ 12 DE DEZEMBRO ✦ 14 HORAS ✦ EXCLUSIVO). Sem animação se o aparelho pedir "reduzir movimento". */
+  var tb=$('#topbar'), tbTxt=(E.gratuito?'AO VIVO E GRATUITO':'AO VIVO')+' · '+E.dataCurta+(hor?' · '+hor:'');
+  tb.setAttribute('aria-label',tbTxt); tb.textContent=tbTxt;
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var items=[['ENCONTRO AO VIVO','tb-live'],[E.dataExtenso.toUpperCase(),''],[hor.replace(/^(\d+)H$/,'$1 HORAS'),''],['EXCLUSIVO','']].filter(function(i){return i[0];});
+    var tr=document.createElement('div'); tr.className='tb-track'; tr.setAttribute('aria-hidden','true');
+    for(var g=0;g<6;g++) items.forEach(function(i){ var sp=document.createElement('span'); if(i[1]) sp.className=i[1]; sp.textContent=i[0]; tr.appendChild(sp); });
+    tb.textContent=''; tb.appendChild(tr);
+  }
   var hc=$('#hchips'); hc.textContent='';
   [E.dataExtenso, E.gratuito?'Ao vivo gratuito':'Ao vivo'].forEach(function(t){ var c=document.createElement('span'); c.className='hchip'; c.textContent=t; hc.appendChild(c); });
   $('#hero-cta-txt').textContent=E.gratuito?'Quero garantir minha vaga gratuita':'QUERO GARANTIR MINHA VAGA NO AULÃO';
